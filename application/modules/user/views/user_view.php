@@ -20,17 +20,17 @@
 															<br>
 															&nbsp;
 																 <table id="data-table" class="table table-striped table-bordered">
-                                    <thead>
-                                        <tr>
-																						<th>No</th>
-                                            <th>Username</th>
-                                            <th>Pegawai</th>
-                                            <th>Level</th>
-                                            <th>Opsi</th>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>No</th>
+                                                                            <th>Username</th>
+                                                                            <th>Pegawai</th>
+                                                                            <th>Level</th>
+                                                                            <th>Opsi</th>
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
 																			<?php
 																			$no = 1;
 																			foreach ($listing as $row) {
@@ -39,7 +39,7 @@
 																			<tr>
 																					<td><?php echo $no; ?></td>
 																					<td><?php echo $row->username; ?></td>
-																					<td><?php echo $row->nama; ?></td>
+																					<td><?php echo $row->member_name; ?></td>
 																					<td><?php echo strtoupper(level_help($row->level)); ?></td>
 																					<td>
 																						<a class="btn btn-warning" href="<?php echo base_url('user/store/'.$row->id); ?>">  <i class="fa fa-pencil"></i> Edit </a>   &nbsp;

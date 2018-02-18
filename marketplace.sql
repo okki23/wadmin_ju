@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-02-18 17:42:42
+Date: 2018-02-18 18:31:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -106,7 +106,7 @@ CREATE TABLE `m_member` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of m_member
@@ -116,6 +116,7 @@ INSERT INTO `m_member` VALUES ('2', 'MBR-02180002', 'juhardi', '02116151', 'uiha
 INSERT INTO `m_member` VALUES ('3', 'MBR-02180003', 'juhardi', '221356156', 'qweqeq', 'qweqeq', 'member', 'juhardi hamsyah', '$2y$10$Zcb7wA2zxmgKTzZosInhnucVggRjOIbYMoVGsWW/Z4ZsQjhdWcl/i', '0', 'fe57756007f54253145dbdfd72b7f0cd6d0dc3ca', '2018-02-09 08:05:04', '2018-02-09 08:10:09');
 INSERT INTO `m_member` VALUES ('4', 'MBR-02180004', 'admin', '31321', 'jadasd', 'ada@hbajsbd', 'member', 'admin', '$2y$10$cHTjdi9dq6/5akI8DJKTmusluzUf2q0bLGqotsVs.3hYlM9Ttw8LO', '0', 'f8271808b85e5de68df3b7621e1715eee69ea669', '2018-02-11 18:25:46', '2018-02-11 18:26:11');
 INSERT INTO `m_member` VALUES ('5', '76457346500', 'Juhardi Hamzah', '089785345345', 'Jl.Nangka 20', 'juhardihamsyah2@gmail.com', '', '', '', '', null, null, null);
+INSERT INTO `m_member` VALUES ('13', '789987', 'Brisia Jodie', '021804432', 'Jl.Jambu', 'jodie.brisia@gmail.com', null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for m_product
@@ -175,7 +176,7 @@ CREATE TABLE `m_store` (
   `created_at` varchar(100) DEFAULT NULL,
   `updated_at` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of m_store
@@ -190,26 +191,22 @@ CREATE TABLE `m_user` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
-  `id_pegawai` varchar(100) DEFAULT NULL,
+  `id_member` int(11) DEFAULT NULL,
   `level` int(10) DEFAULT NULL,
   `remember_token` varchar(255) DEFAULT NULL,
   `created_at` varchar(50) DEFAULT NULL,
   `update_at` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `id_pegawai` (`id_pegawai`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
+  KEY `id_pegawai` (`id_member`)
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of m_user
 -- ----------------------------
 INSERT INTO `m_user` VALUES ('24', 'admin', '0cc175b9c0f1b6a831c399e269772661', '1', '1', null, null, null);
-INSERT INTO `m_user` VALUES ('36', 'mahmud', '0cc175b9c0f1b6a831c399e269772661', '2', '2', null, null, null);
-INSERT INTO `m_user` VALUES ('37', 'nurman', '0cc175b9c0f1b6a831c399e269772661', '3', '3', null, null, null);
-INSERT INTO `m_user` VALUES ('38', 'wahyu', '0cc175b9c0f1b6a831c399e269772661', '4', '4', null, null, null);
-INSERT INTO `m_user` VALUES ('39', 'romi', '0cc175b9c0f1b6a831c399e269772661', '5', '3', null, null, null);
-INSERT INTO `m_user` VALUES ('40', 'jonis', '7815696ecbf1c96e6894b779456d330e', '7', '3', null, null, null);
 INSERT INTO `m_user` VALUES ('41', 'juhardi', '0cc175b9c0f1b6a831c399e269772661', '8', '1', null, null, null);
 INSERT INTO `m_user` VALUES ('42', 'rezaki', '0cc175b9c0f1b6a831c399e269772661', '9', '2', null, null, null);
+INSERT INTO `m_user` VALUES ('43', 'brisiax', '0cc175b9c0f1b6a831c399e269772661', '13', '2', null, null, null);
 
 -- ----------------------------
 -- Table structure for orders

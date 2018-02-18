@@ -20,9 +20,7 @@ class Member_api extends Parent_controller {
           echo json_encode(array('status'=>true,'message'=>'success!','data'=>$data));
       
     }
-
-
-  
+ 
 
     public function member_save_api(){
 

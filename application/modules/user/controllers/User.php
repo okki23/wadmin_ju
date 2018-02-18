@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends Parent_controller {
 
-  var $parsing_form_input = array('id','username','password','id_pegawai','level');
+  var $parsing_form_input = array('id','username','password','id_member','level','remember_token','created_at','update_at');
   var $tablename = 'm_user';
 
     public function __construct() {
@@ -17,7 +17,7 @@ class User extends Parent_controller {
     }
 
     public function index() {
-        $data['judul'] = $this->data['judul'];
+        $data['judul'] = "E-MARKETPLACE";
         $data['parse_view'] = 'user/user_view';
         $data['listing'] = $this->m_umanagement->list_user();
 

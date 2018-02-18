@@ -99,35 +99,46 @@
                                  <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                  <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                              </div>
-                             <h4 class="panel-title">PRODUCT MANAGEMENT FORM</h4>
+                             <h4 class="panel-title">STORE MANAGEMENT FORM</h4>
                          </div>
 
                          <div class="panel-body">
-
+                        
                              <form class="form-horizontal" action="<?php echo base_url('store/save'); ?>" method="POST" enctype="multipart/form-data">
 															 <input type="hidden" name="id" value="<?php echo $parseform->id; ?>">
-															 <div class="form-group">
-															 		<label class="col-md-3 control-label">Kode store
+															 
+                                                             <div class="form-group">
+															 		<label class="col-md-3 control-label">Kode Store
 																	</label>
 															 		<div class="col-md-9">
-															 				<input type="text" name="kode_store" value="<?php echo $parseform->kode_store; ?>" class="form-control" />
+															 				<input type="text" name="store_id" value="<?php echo $parseform->store_id; ?>" class="form-control" />
 															 		</div>
 															 </div>
-                               <div class="form-group">
-															 		<label class="col-md-3 control-label">Nama store
+
+                                                             <div class="form-group">
+															 		<label class="col-md-3 control-label">Nama Store
 																	</label>
 															 		<div class="col-md-9">
-															 				<input type="text" name="nama_store" value="<?php echo $parseform->nama_store; ?>" class="form-control"  />
+															 				<input type="text" name="store_name" value="<?php echo $parseform->store_name; ?>" class="form-control" />
 															 		</div>
 															 </div>
-                               <div class="form-group">
-															 		<label class="col-md-3 control-label">Foto store
+
+                                                             <div class="form-group">
+															 		<label class="col-md-3 control-label">Alamat Store
 																	</label>
 															 		<div class="col-md-9">
-															 				<input type="file" name="foto_storex" id="foto_storex" class="form-control"   />
-																			<input type="hidden" name="foto_store" id="foto_store" value="<?php echo $parseform->foto_store; ?>" class="form-control"   />
+															 				<input type="text" name="store_address" value="<?php echo $parseform->store_address; ?>" class="form-control" />
 															 		</div>
 															 </div>
+
+                                                              <div class="form-group">
+															 		<label class="col-md-3 control-label">Telp Store
+																	</label>
+															 		<div class="col-md-9">
+															 				<input type="text" name="store_phone_number" value="<?php echo $parseform->store_phone_number; ?>" class="form-control" />
+															 		</div>
+															 </div>
+                              
 
 															 <div  align="center">
 															 		<button type="submit" name="save" class="btn btn-large btn-primary" > <i class="fa fa-archive"></i> Save </button>

@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Store extends Parent_controller {
 
-  var $parsing_form_input = array('id','kode_store','nama_store','foto_store');
-  var $tablename = 'm_product';
+  var $parsing_form_input = array('id','store_id','member_id','store_name','store_address','store_phone_number','created_at','updated_at');
+  var $tablename = 'm_store';
 
     public function __construct() {
         parent::__construct();
@@ -32,7 +32,7 @@ class Store extends Parent_controller {
 
 
 
-    public function store(){
+    public function storex(){
         $id = $this->uri->segment(3);
         $data['judul'] = $this->data['judul'];
           if($id == '' || empty($id) || $id == NULL){
@@ -78,9 +78,7 @@ class Store extends Parent_controller {
     public function delete(){
       $idpost = $this->uri->segment(3);
       $get = $this->db->query("select * from m_product where id = '$idpost'")->row();
-      if($get->foto_store != '' || $get->foto_store == NULL){
-          unlink("uploads/".str_replace(" ","_",$get->foto_store));
-      }
+      
       $del = $this->m_store->delete($idpost,$this->tablename);
  
       if($del){

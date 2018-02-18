@@ -124,14 +124,14 @@
 															 <div class="form-group">
 															 		<label class="col-md-3 control-label">Pegawai</label>
 															 		<div class="col-md-9">
-																		<select name="id_pegawai" class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-white">
+																		<select name="id_member" class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-white">
 																						<option value = "">--Pilih--</option>
 																						<?php foreach ($opt_pegawai as $row){
 
-																								if($row->id == $parseform->id_pegawai){
-																									echo '<option value='.$row->id.' selected=selected> '.$row->nama.' </option>';
+																								if($row->id == $parseform->id_member){
+																									echo '<option value='.$row->id.' selected=selected> '.$row->member_name.' </option>';
 																								}else{
-																									echo '<option value='.$row->id.'> '.$row->nama.' </option>';
+																									echo '<option value='.$row->id.'> '.$row->member_name.' </option>';
 																								}
 
 																						}
