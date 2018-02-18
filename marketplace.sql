@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-02-18 18:31:53
+Date: 2018-02-18 23:40:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -106,7 +106,7 @@ CREATE TABLE `m_member` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of m_member
@@ -117,6 +117,8 @@ INSERT INTO `m_member` VALUES ('3', 'MBR-02180003', 'juhardi', '221356156', 'qwe
 INSERT INTO `m_member` VALUES ('4', 'MBR-02180004', 'admin', '31321', 'jadasd', 'ada@hbajsbd', 'member', 'admin', '$2y$10$cHTjdi9dq6/5akI8DJKTmusluzUf2q0bLGqotsVs.3hYlM9Ttw8LO', '0', 'f8271808b85e5de68df3b7621e1715eee69ea669', '2018-02-11 18:25:46', '2018-02-11 18:26:11');
 INSERT INTO `m_member` VALUES ('5', '76457346500', 'Juhardi Hamzah', '089785345345', 'Jl.Nangka 20', 'juhardihamsyah2@gmail.com', '', '', '', '', null, null, null);
 INSERT INTO `m_member` VALUES ('13', '789987', 'Brisia Jodie', '021804432', 'Jl.Jambu', 'jodie.brisia@gmail.com', null, null, null, null, null, null, null);
+INSERT INTO `m_member` VALUES ('14', 'MBR05', 'Yuma Akbar', '021894365', 'Jl.Depok', 'yumekhan@gmail.com', null, null, null, null, null, null, null);
+INSERT INTO `m_member` VALUES ('15', 'MBR06', 'Umay Shahab', '0217345345', 'Jl.Yuyu', 'umay@mail.com', null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for m_product
@@ -135,11 +137,15 @@ CREATE TABLE `m_product` (
   `created_at` varchar(100) DEFAULT NULL,
   `updated_at` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of m_product
 -- ----------------------------
+INSERT INTO `m_product` VALUES ('22', '15', null, 'PR012', 'Sembako', 'Minyak Tanah', '1 Liter', 'ee.png', '10', null, null);
+INSERT INTO `m_product` VALUES ('23', '15', null, 'G02', 'BBM Rumah tangga', 'Gas Elpiji', '12 Kg', 'head.png', '20', null, null);
+INSERT INTO `m_product` VALUES ('24', '18', null, 'P01', 'Performance', 'NOS Big High Oxide', '1 Kg ', 'nos-14745nos_xl.jpg', '10', null, null);
+INSERT INTO `m_product` VALUES ('25', '18', null, 'PY09', 'Performance Intake', 'Nitrous Express', '1 Kg', '744-20420-10.jpg', '20', null, null);
 
 -- ----------------------------
 -- Table structure for m_service_center
@@ -176,12 +182,13 @@ CREATE TABLE `m_store` (
   `created_at` varchar(100) DEFAULT NULL,
   `updated_at` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of m_store
 -- ----------------------------
-INSERT INTO `m_store` VALUES ('15', 'S01', null, 'Toko Megah Sederhana', 'Jl.Margasari', null, null, null);
+INSERT INTO `m_store` VALUES ('15', 'S02', '3', 'Toko Megah Jaya', 'Jl.Margasari', '021974354', null, null);
+INSERT INTO `m_store` VALUES ('18', 'KT009', null, 'Toko Alibaba', 'Jl.Xin Jiang', '021943434', null, null);
 
 -- ----------------------------
 -- Table structure for m_user
@@ -198,7 +205,7 @@ CREATE TABLE `m_user` (
   `update_at` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_pegawai` (`id_member`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of m_user
@@ -207,6 +214,10 @@ INSERT INTO `m_user` VALUES ('24', 'admin', '0cc175b9c0f1b6a831c399e269772661', 
 INSERT INTO `m_user` VALUES ('41', 'juhardi', '0cc175b9c0f1b6a831c399e269772661', '8', '1', null, null, null);
 INSERT INTO `m_user` VALUES ('42', 'rezaki', '0cc175b9c0f1b6a831c399e269772661', '9', '2', null, null, null);
 INSERT INTO `m_user` VALUES ('43', 'brisiax', '0cc175b9c0f1b6a831c399e269772661', '13', '2', null, null, null);
+INSERT INTO `m_user` VALUES ('46', 'member', '0cc175b9c0f1b6a831c399e269772661', '14', '3', null, null, null);
+INSERT INTO `m_user` VALUES ('47', 'edwin', '0cc175b9c0f1b6a831c399e269772661', '2', '3', null, null, null);
+INSERT INTO `m_user` VALUES ('48', 'yuma', '0cc175b9c0f1b6a831c399e269772661', '14', '2', null, null, null);
+INSERT INTO `m_user` VALUES ('49', 'umay', '0cc175b9c0f1b6a831c399e269772661', '15', '2', null, null, null);
 
 -- ----------------------------
 -- Table structure for orders
@@ -223,11 +234,16 @@ CREATE TABLE `orders` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
+INSERT INTO `orders` VALUES ('3', 'OR01', 'PR012', '76457346500', 'S02', '10', '1000000', '2018-02-18 21:07:38', null);
+INSERT INTO `orders` VALUES ('4', 'OR02', 'G02', '789987', 'KT009', '1', '150000', '2018-02-18 21:07:38', null);
+INSERT INTO `orders` VALUES ('5', 'OR03', 'PY09', 'MBR05', 'KT009', '1', '2500000', '2018-02-18 21:07:38', null);
+INSERT INTO `orders` VALUES ('6', 'OR04', 'P01', 'MBR05', 'KT009', '1', '3500000', '2018-02-18 21:07:38', null);
+INSERT INTO `orders` VALUES ('7', 'OR05', 'P01', 'MBR05', 'KT009', '1', '3500000', '2018-02-18 21:07:38', null);
 
 -- ----------------------------
 -- Table structure for password_resets
@@ -294,19 +310,22 @@ CREATE TABLE `stores` (
 DROP TABLE IF EXISTS `tracking_numbers`;
 CREATE TABLE `tracking_numbers` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `member_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `order_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `kurir_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `no_status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `member_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `order_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kurir_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `no_status` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of tracking_numbers
 -- ----------------------------
+INSERT INTO `tracking_numbers` VALUES ('1', null, 'OR01', '789987', null, 'MANIFEST  BANDUNG', null, '2018-02-18 22:15:46');
+INSERT INTO `tracking_numbers` VALUES ('3', null, 'OR03', 'MBR05', '1', 'SAMPAI DITUJUAN', null, '2018-02-18 22:11:42');
+INSERT INTO `tracking_numbers` VALUES ('5', null, 'OR05', 'MBR05', null, null, null, null);
 
 -- ----------------------------
 -- Table structure for trans_assign

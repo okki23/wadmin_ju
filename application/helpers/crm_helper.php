@@ -7,9 +7,9 @@ if(!function_exists('level_help')){
 		}else if($params == 2){
 			$res = 'kurir';
 		}else if($params == 3){
-			$res = 'teknisi';
+			$res = 'penjual';
 		}else if($params == 4){
-			$res = 'supervisor';
+			$res = 'pembeli';
 		}else{
 			$res = 'not found';
 		}

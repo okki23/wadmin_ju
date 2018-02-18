@@ -117,6 +117,19 @@
 						    <li><a href="<?php echo base_url('user'); ?>">User</a></li>
 						</ul>
 					</li>
+					<li class="has-sub">
+						<a href="javascript:;">
+						    <b class="caret pull-right"></b>
+						    <i class="fa fa-laptop"></i>
+						    <span>Transaksi</span>
+					    </a>
+						<ul class="sub-menu">
+						     
+							<li><a href="<?php echo base_url('order'); ?>">Order</a></li>
+							<li><a href="<?php echo base_url('tracking'); ?>">Tracking</a></li>
+
+						</ul>
+					</li>
 
 
 					<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
@@ -136,9 +149,9 @@
 						    <span>Transaksi</span>
 					    </a>
 						<ul class="sub-menu">
-						    <li><a href="<?php echo base_url('assign_task'); ?>">Assignmen Tugas</a></li>
-							<li><a href="<?php echo base_url('assign_task'); ?>">Order</a></li>
-							<li><a href="<?php echo base_url('assign_task'); ?>">Tracking</a></li>
+						    
+							<li><a href="<?php echo base_url('order'); ?>">Order</a></li>
+							<li><a href="<?php echo base_url('tracking_kurir'); ?>">Tracking</a></li>
 
 						</ul>
 					</li>
@@ -261,7 +274,9 @@
 
 	<script>
 
-	
+	function formatNumber (num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+}
  
    var $lightbox = $('#lightbox');
     
@@ -307,7 +322,24 @@
 				format: 'yyyy-mm-dd'
 			});
 
-
+ 
+ $("#order_id").on("change",function(){
+    var isi = $("#order_id").val();
+    $.get("<?php echo base_url('tracking/get_info/');?>"+isi,function(result){
+		var par = JSON.parse(result);
+		// {"id":"3","order_id":"OR01","product_id":"PR012","member_id":"76457346500","store_id":"S02","qty":"10","total":"1000000","created_at":"2018-02-18 21:07:38","updated_at":null,"product_category":"Sembako","product_name":"Minyak Tanah","product_variants":"1 Liter","product_photo":"ee.png","member_name":"Juhardi Hamzah","store_name":"Toko Megah Jaya","store_address":"Jl.Margasari","store_phone_number":"021974354"}
+		$("#product_name").html(par.product_name);
+		$("#product_category").html(par.product_category);
+		$("#product_varian").html(par.product_variants);
+		$("#member_name").html(par.member_name);
+		$("#store_name").html(par.store_name);
+		$("#created_at").html(par.created_at);
+		$("#qty").html(par.qty);
+		$("#total").html(formatNumber(par.total));
+  
+	});
+ });
+  
 
 			$("#product_photox").on("change",function(){
 				var filename = $('#product_photox').val().replace(/C:\\fakepath\\/i, '');

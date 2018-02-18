@@ -99,39 +99,60 @@
                                  <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                  <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                              </div>
-                             <h4 class="panel-title">USER MANAGEMENT FORM</h4>
+                             <h4 class="panel-title">PRODUCT MANAGEMENT FORM</h4>
                          </div>
+                         
 
                          <div class="panel-body">
-                             <form class="form-horizontal" action="<?php echo base_url('user/save'); ?>" method="POST">
+
+                             <form class="form-horizontal" action="<?php echo base_url('produk/save'); ?>" method="POST" enctype="multipart/form-data">
 															 <input type="hidden" name="id" value="<?php echo $parseform->id; ?>">
 															 <div class="form-group">
-
-
-															 		<label class="col-md-3 control-label">Username
+															 		<label class="col-md-3 control-label">Kode Produk
 																	</label>
 															 		<div class="col-md-9">
-															 				<input type="text" name="username" value="<?php echo $parseform->username; ?>" class="form-control" placeholder="Username" />
+															 				<input type="text" name="product_id" value="<?php echo $parseform->product_id; ?>" class="form-control" />
 															 		</div>
 															 </div>
-															 <div class="form-group">
-															 		<label class="col-md-3 control-label">Password</label>
+                                                             <div class="form-group">
+															 		<label class="col-md-3 control-label">Nama Produk
+																	</label>
 															 		<div class="col-md-9">
-															 				<input type="password" name="password" class="form-control" placeholder="Password" />
-																			<h4> <span class="label label-danger">  HARAP KOSONGKAN SAJA APABILA PASSWORD TIDAK INGIN DIRUBAH!!!
+															 				<input type="text" name="product_name" value="<?php echo $parseform->product_name; ?>" class="form-control"  />
 															 		</div>
 															 </div>
-															 <div class="form-group">
-															 		<label class="col-md-3 control-label">Pegawai</label>
+                                                             <div class="form-group">
+															 		<label class="col-md-3 control-label">Kategori Produk
+																	</label>
 															 		<div class="col-md-9">
-																		<select name="id_member" class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-white">
+															 				<input type="text" name="product_category" value="<?php echo $parseform->product_category; ?>" class="form-control"  />
+															 		</div>
+															 </div>
+                                                             <div class="form-group">
+															 		<label class="col-md-3 control-label">Varian Produk
+																	</label>
+															 		<div class="col-md-9">
+															 				<input type="text" name="product_variants" value="<?php echo $parseform->product_variants; ?>" class="form-control"  />
+															 		</div>
+															 </div>
+                                                             <div class="form-group">
+															 		<label class="col-md-3 control-label">Stok Produk
+																	</label>
+															 		<div class="col-md-9">
+															 				<input type="text" name="stok" value="<?php echo $parseform->stok; ?>" class="form-control"  />
+															 		</div>
+															 </div>
+                                                             <div class="form-group">
+															 		<label class="col-md-3 control-label">Store / Toko</label>
+															 		<div class="col-md-9">
+																		<select name="id_store" class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-white">
 																						<option value = "">--Pilih--</option>
-																						<?php foreach ($opt_pegawai as $row){
+																						<?php foreach ($opt_store as $row){
 
-																								if($row->id == $parseform->id_member){
-																									echo '<option value='.$row->id.' selected=selected> '.$row->member_name.' </option>';
+																								if($row->id == $parseform->id_store){
+																									echo '<option value='.$row->id.' selected=selected> '.$row->store_name.' </option>';
 																								}else{
-																									echo '<option value='.$row->id.'> '.$row->member_name.' </option>';
+																									echo '<option value='.$row->id.'> '.$row->store_name.' </option>';
 																								}
 
 																						}
@@ -139,24 +160,19 @@
 																	  </select>
 															 		</div>
 															 </div>
-															 <div class="form-group">
-															 		<label class="col-md-3 control-label">Level</label>
+                                                            <div class="form-group">
+															 		<label class="col-md-3 control-label">Foto Produk
+																	</label>
 															 		<div class="col-md-9">
-																		<select name="level" class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-white">
-																					
-                                                                                    <option value = "">--Pilih--</option>
-																					<option value = "1" <?php if($parseform->level == '1') { echo "selected=selected"; }  ?> >Administrator</option>
-																					<option value = "2" <?php if($parseform->level == '2') { echo "selected=selected"; }  ?> >Kurir</option>
-                                                                                    <option value = "3" <?php if($parseform->level == '3') { echo "selected=selected"; }  ?> >Penjual</option>
-																					<option value = "4" <?php if($parseform->level == '4') { echo "selected=selected"; }  ?> >Pembeli</option>
-  
-																	  </select>
+															 				<input type="file" name="product_photox" id="product_photox" class="form-control"   />
+																			<input type="hidden" name="product_photo" id="product_photo" value="<?php echo $parseform->product_photo; ?>" class="form-control"   />
 															 		</div>
 															 </div>
+                                                            
 
 															 <div  align="center">
 															 		<button type="submit" name="save" class="btn btn-large btn-primary" > <i class="fa fa-archive"></i> Save </button>
-																	<a class="btn btn-danger" href="<?php echo base_url('user'); ?>"> <i class="fa fa-reply-all"></i> Back </a>
+																	<a class="btn btn-danger" href="<?php echo base_url('produk'); ?>"> <i class="fa fa-reply-all"></i> Back </a>
 															 </div>
 																 <!-- <div class="form-group">
                                      <label class="col-md-3 control-label">Default Input</label>

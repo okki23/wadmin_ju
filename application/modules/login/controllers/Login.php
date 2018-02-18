@@ -29,7 +29,7 @@ class Login extends Parent_controller {
       $usersess = $this->m_login->auth($datapos)->row();
 
       if($avail > 0){
-  			$list = array('username'=>$usersess->username,'user_group'=>$usersess->level,'user_id'=>$usersess->id_pegawai);
+  			$list = array('username'=>$usersess->username,'user_group'=>$usersess->level,'user_id'=>$usersess->id_member);
   			$this->session->set_userdata($list);
 
   		 	redirect(base_url('dashboard'));
