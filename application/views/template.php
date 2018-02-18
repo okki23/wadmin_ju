@@ -98,7 +98,7 @@
 			<!-- begin sidebar scrollbar -->
 			<div data-scrollbar="true" data-height="100%">
 				<!-- begin sidebar user -->
-					<?php if($user_group == 'SUPERADMIN') {
+					<?php if($user_group == 'ADMINISTRATOR') {
 					?>
 				<ul class="nav">
 					<div style="margin-top:10px;"> &nbsp; </div>
@@ -111,8 +111,9 @@
 					    </a>
 						<ul class="sub-menu">
 						    <li><a href="<?php echo base_url('produk'); ?>">Produk</a></li>
-						    <li><a href="<?php echo base_url('service_center'); ?>">Service Center</a></li>
-								<li><a href="<?php echo base_url('pegawai'); ?>">Pegawai</a></li>
+						    
+							<li><a href="<?php echo base_url('pegawai'); ?>">Member</a></li>
+							<li><a href="<?php echo base_url('pegawai'); ?>">Store</a></li>
 						    <li><a href="<?php echo base_url('user'); ?>">User</a></li>
 						</ul>
 					</li>
@@ -122,7 +123,7 @@
 
 				</ul>
 				<?php
-			}else if($user_group == 'ADMIN TEKNISI'){
+			}else if($user_group == 'KURIR'){
 				?>
 				<ul class="nav">
 					<div style="margin-top:10px;"> &nbsp; </div>
@@ -136,6 +137,8 @@
 					    </a>
 						<ul class="sub-menu">
 						    <li><a href="<?php echo base_url('assign_task'); ?>">Assignmen Tugas</a></li>
+							<li><a href="<?php echo base_url('assign_task'); ?>">Order</a></li>
+							<li><a href="<?php echo base_url('assign_task'); ?>">Tracking</a></li>
 
 						</ul>
 					</li>
@@ -257,6 +260,35 @@
 	<!-- ================== END PAGE LEVEL JS ================== -->
 
 	<script>
+
+	
+ 
+   var $lightbox = $('#lightbox');
+    
+    $('[data-target="#lightbox"]').on('click', function(event) {
+        var $img = $(this).find('img'), 
+            src = $img.attr('src'),
+            alt = $img.attr('alt'),
+            css = {
+                'maxWidth': $(window).width() - 100,
+                'maxHeight': $(window).height() - 100
+            };
+    
+        $lightbox.find('.close').addClass('hidden');
+        $lightbox.find('img').attr('src', src);
+        $lightbox.find('img').attr('alt', alt);
+        $lightbox.find('img').css(css);
+    });
+    
+    $lightbox.on('shown.bs.modal', function (e) {
+        var $img = $lightbox.find('img');
+            
+        $lightbox.find('.modal-dialog').css({'width': $img.width()});
+        $lightbox.find('.close').removeClass('hidden');
+    });
+     
+ 
+
 	 	$('#datepicker-default').datepicker({
 	    "format": 'yyyy-mm-dd',
 			"setDate": new Date(),
@@ -277,9 +309,9 @@
 
 
 
-			$("#foto_produkx").on("change",function(){
-				var filename = $('#foto_produkx').val().replace(/C:\\fakepath\\/i, '');
-				$("#foto_produk").val(filename);
+			$("#product_photox").on("change",function(){
+				var filename = $('#product_photox').val().replace(/C:\\fakepath\\/i, '');
+				$("#product_photo").val(filename);
 			});
 			$("#foto_scx").on("change",function(){
 				var filename = $('#foto_scx').val().replace(/C:\\fakepath\\/i, '');

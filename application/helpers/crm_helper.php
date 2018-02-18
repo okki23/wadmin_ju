@@ -3,9 +3,9 @@ if(!function_exists('level_help')){
 	function level_help($params){
 
 		if($params == 1){
-			$res = 'superadmin';
+			$res = 'administrator';
 		}else if($params == 2){
-			$res = 'admin teknisi';
+			$res = 'kurir';
 		}else if($params == 3){
 			$res = 'teknisi';
 		}else if($params == 4){

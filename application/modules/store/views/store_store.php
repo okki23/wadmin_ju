@@ -101,78 +101,37 @@
                              </div>
                              <h4 class="panel-title">PRODUCT MANAGEMENT FORM</h4>
                          </div>
-                         
 
                          <div class="panel-body">
 
-                             <form class="form-horizontal" action="<?php echo base_url('produk/save'); ?>" method="POST" enctype="multipart/form-data">
+                             <form class="form-horizontal" action="<?php echo base_url('store/save'); ?>" method="POST" enctype="multipart/form-data">
 															 <input type="hidden" name="id" value="<?php echo $parseform->id; ?>">
 															 <div class="form-group">
-															 		<label class="col-md-3 control-label">Kode Produk
+															 		<label class="col-md-3 control-label">Kode store
 																	</label>
 															 		<div class="col-md-9">
-															 				<input type="text" name="product_id" value="<?php echo $parseform->product_id; ?>" class="form-control" />
+															 				<input type="text" name="kode_store" value="<?php echo $parseform->kode_store; ?>" class="form-control" />
 															 		</div>
 															 </div>
-                                                             <div class="form-group">
-															 		<label class="col-md-3 control-label">Nama Produk
+                               <div class="form-group">
+															 		<label class="col-md-3 control-label">Nama store
 																	</label>
 															 		<div class="col-md-9">
-															 				<input type="text" name="product_name" value="<?php echo $parseform->product_name; ?>" class="form-control"  />
+															 				<input type="text" name="nama_store" value="<?php echo $parseform->nama_store; ?>" class="form-control"  />
 															 		</div>
 															 </div>
-                                                             <div class="form-group">
-															 		<label class="col-md-3 control-label">Kategori Produk
+                               <div class="form-group">
+															 		<label class="col-md-3 control-label">Foto store
 																	</label>
 															 		<div class="col-md-9">
-															 				<input type="text" name="product_category" value="<?php echo $parseform->product_category; ?>" class="form-control"  />
+															 				<input type="file" name="foto_storex" id="foto_storex" class="form-control"   />
+																			<input type="hidden" name="foto_store" id="foto_store" value="<?php echo $parseform->foto_store; ?>" class="form-control"   />
 															 		</div>
 															 </div>
-                                                             <div class="form-group">
-															 		<label class="col-md-3 control-label">Varian Produk
-																	</label>
-															 		<div class="col-md-9">
-															 				<input type="text" name="product_variants" value="<?php echo $parseform->product_variants; ?>" class="form-control"  />
-															 		</div>
-															 </div>
-                                                             <div class="form-group">
-															 		<label class="col-md-3 control-label">Stok Produk
-																	</label>
-															 		<div class="col-md-9">
-															 				<input type="text" name="stok" value="<?php echo $parseform->stok; ?>" class="form-control"  />
-															 		</div>
-															 </div>
-                                                             <div class="form-group">
-															 		<label class="col-md-3 control-label">Store / Toko</label>
-															 		<div class="col-md-9">
-																		<select name="id_store" class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-white">
-																						<option value = "">--Pilih--</option>
-																						<?php foreach ($opt_store as $row){
-
-																								if($row->id == $parseform->id_store){
-																									echo '<option value='.$row->id.' selected=selected> '.$row->store_name.' </option>';
-																								}else{
-																									echo '<option value='.$row->id.'> '.$row->store_name.' </option>';
-																								}
-
-																						}
-																						?>
-																	  </select>
-															 		</div>
-															 </div>
-                                                            <div class="form-group">
-															 		<label class="col-md-3 control-label">Foto Produk
-																	</label>
-															 		<div class="col-md-9">
-															 				<input type="file" name="product_photox" id="product_photox" class="form-control"   />
-																			<input type="hidden" name="product_photo" id="product_photo" value="<?php echo $parseform->product_photo; ?>" class="form-control"   />
-															 		</div>
-															 </div>
-                                                            
 
 															 <div  align="center">
 															 		<button type="submit" name="save" class="btn btn-large btn-primary" > <i class="fa fa-archive"></i> Save </button>
-																	<a class="btn btn-danger" href="<?php echo base_url('produk'); ?>"> <i class="fa fa-reply-all"></i> Back </a>
+																	<a class="btn btn-danger" href="<?php echo base_url('store'); ?>"> <i class="fa fa-reply-all"></i> Back </a>
 															 </div>
 																 <!-- <div class="form-group">
                                      <label class="col-md-3 control-label">Default Input</label>

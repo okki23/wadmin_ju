@@ -5,7 +5,7 @@ class Parent_controller extends CI_Controller {
 
 		public function __construct(){
 			  parent::__construct();
-				$this->data['judul'] = 'Program Aplikasi CRM pada PT.LG';
+				$this->data['judul'] = 'E-MARKETPLACE';
 				$this->load->helper('crm');
 
 		}
