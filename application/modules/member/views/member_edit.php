@@ -34,7 +34,7 @@
         <li class="divider"></li>
         <li><a href="javascript::void(0);"><i class="icon-check"></i> <?php echo "Your Level : ".$_SESSION['level'];?></a></li>
         <li class="divider"></li>
-        <li><a href="javascript::void(0);"><i class="icon-check"></i> <?php echo "Your Full Name : ".$_SESSION['namapegawai'];?></a></li>
+        <li><a href="javascript::void(0);"><i class="icon-check"></i> <?php echo "Your Full Name : ".$_SESSION['namamember'];?></a></li>
         <li class="divider"></li>
         <li><a href="javascript::void(0);"><i class="icon-check"></i> <?php echo "Your NRP : ".$_SESSION['nrp'];?></a></li>
         <li class="divider"></li>
@@ -123,7 +123,7 @@ if($_SESSION['level'] == 'admin'){
     <li class="active"><a href="<?php echo base_url('dashboard'); ?>"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
      <li class="submenu"> <a href="javascript::void(0);"><i class="icon icon-th-list"></i> <span>Master</span></a>
       <ul>
-        <li><a href="<?php echo base_url('pegawai'); ?>">Pegawai</a></li>
+        <li><a href="<?php echo base_url('member'); ?>">member</a></li>
         <li><a href="<?php echo base_url('user'); ?>">User</a></li>
       
       </ul>
@@ -141,18 +141,18 @@ if($_SESSION['level'] == 'admin'){
 <div id="content">
 <div id="content-header">
    <div id="breadcrumb">   </div>
-  <h1>Form Pegawai </h1>
+  <h1>Form member </h1>
 </div>
 <div class="container-fluid">
   <hr>
   <div class="row-fluid">
   <div class="span12">
-   <form action="<?php echo base_url('pegawai/pro_edit');?>" method="post" enctype="multipart/form-data" class="form-horizontal">
+   <form action="<?php echo base_url('member/pro_edit');?>" method="post" enctype="multipart/form-data" class="form-horizontal">
   <div class="accordion" id="collapse-group">
           <div class="accordion-group widget-box">
             <div class="accordion-heading">
               <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGOne" data-toggle="collapse"> <span class="icon"><i class="icon-circle-arrow-right"></i></span>
-                <h5>Data Pegawai</h5>
+                <h5>Data member</h5>
                 </a> </div>
             </div>
             <div class="collapse in accordion-body" id="collapseGOne">
@@ -172,7 +172,7 @@ if($_SESSION['level'] == 'admin'){
                   <div class="control-group">
                     <label class="control-label">Nama :</label>
                     <div class="controls">
-                    <input type="text" name="nm_pegawai" value="<?php echo $listing->nm_pegawai; ?>" class="span11" />
+                    <input type="text" name="nm_member" value="<?php echo $listing->nm_member; ?>" class="span11" />
                     </div>
                   </div>
                   <div class="control-group">
@@ -209,9 +209,9 @@ if($_SESSION['level'] == 'admin'){
                       <?php
                       foreach ($opt_kas_for->result() as $valsie) {
                           if($valsie->id == $listing->id_kasie){
-                               echo "<option value=".$valsie->id." selected='selected' > ".$valsie->nm_pegawai." </option>";
+                               echo "<option value=".$valsie->id." selected='selected' > ".$valsie->nm_member." </option>";
                           }else{
-                               echo "<option value=".$valsie->id." > ".$valsie->nm_pegawai." </option>";
+                               echo "<option value=".$valsie->id." > ".$valsie->nm_member." </option>";
                           }
                             
                       }
@@ -228,9 +228,9 @@ if($_SESSION['level'] == 'admin'){
                        <?php
                       foreach ($opt_kas_for->result() as $valman) {
                           if($valman->id == $listing->id_foreman){
-                               echo "<option value=".$valman->id." selected='selected' > ".$valman->nm_pegawai." </option>";
+                               echo "<option value=".$valman->id." selected='selected' > ".$valman->nm_member." </option>";
                           }else{
-                               echo "<option value=".$valman->id." > ".$valman->nm_pegawai." </option>";
+                               echo "<option value=".$valman->id." > ".$valman->nm_member." </option>";
                           }
                             
                       }

@@ -21,52 +21,7 @@ class Produk_api extends Parent_controller {
         
     }
 
-
-
-    public function store(){
-        $id = $this->uri->segment(3);
-        $data['judul'] = $this->data['judul'];
-          if($id == '' || empty($id) || $id == NULL){
-            $data['parseform'] = $this->m_produk_api->get_new($this->parsing_form_input);
-          }else{
-            $data['parseform'] = $this->m_produk_api->get_all($id,$this->tablename)->row();
-          }
-
-          $data['parse_view'] = 'produk_api/produk_api_store';
-          $data['opt_store'] = $this->db->get('m_store')->result();
-          //var_dump($data['opt_store']);
-          //session
-          $data['username'] = $this->session->userdata('username');
-          $data['user_group'] = strtoupper(level_help($this->session->userdata('user_group')));
-          $data['produk_api_id'] = $this->session->userdata('produk_api_id');
-          $this->load->view('template', $data);
-    }
-
-
-    public function save(){
-      $posfile = $this->input->post('product_photo');
-      $datapos = $this->m_produk_api->input_array($this->parsing_form_input);
-      $id = isset($datapos['id']) ? $datapos['id'] : '';
-      $save = $this->m_produk_api->save($datapos,$id,$this->tablename);
-
-      $config['upload_path'] = "uploads/";
-      $config['allowed_types'] = 'gif|bmp|jpg|jpeg|png';
-      $config['max_size'] = 5000;
-      $config['remove_spaces'] = TRUE;
-      $this->load->library('upload');
-      $this->upload->initialize($config);
-      if ($posfile != '') {
-          $this->upload->do_upload('product_photox');
-      }
-
-      if($save){
-        echo "<script language=javascript>
-         alert('Simpan Data Berhasil');
-         window.location='" . base_url('produk_api') . "';
-             </script>";
-      }
-
-    }
+  
 
     public function product_save_api(){
         $posfile = $this->input->post('product_photo');

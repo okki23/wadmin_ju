@@ -112,8 +112,8 @@
 						<ul class="sub-menu">
 						    <li><a href="<?php echo base_url('produk'); ?>">Produk</a></li>
 						    
-							<li><a href="<?php echo base_url('pegawai'); ?>">Member</a></li>
-							<li><a href="<?php echo base_url('pegawai'); ?>">Store</a></li>
+							<li><a href="<?php echo base_url('member'); ?>">Member</a></li>
+							<li><a href="<?php echo base_url('store'); ?>">Store</a></li>
 						    <li><a href="<?php echo base_url('user'); ?>">User</a></li>
 						</ul>
 					</li>

@@ -11,19 +11,19 @@
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                             </div>
-                            <h4 class="panel-title">EMPLOYEE MANAGEMENT  </h4>
+                            <h4 class="panel-title">MEMBER MANAGEMENT  </h4>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
 
-															<a href="<?php echo base_url('pegawai/store');?>" class="btn btn-large btn-danger"> <i class="fa fa-plus-circle"></i> ADD </a>
+															<a href="<?php echo base_url('member/store');?>" class="btn btn-large btn-danger"> <i class="fa fa-plus-circle"></i> ADD </a>
 															<br>
 															&nbsp;
 																 <table id="data-table" class="table table-striped table-bordered">
                                    <thead>
                                      <tr>
 
-                                       <th>NIK</th>
+                                       <th>MemberID</th>
                                        <th>Nama</th>
                                        <th>Alamat</th>
                                        <th>Kontak</th>
@@ -36,11 +36,11 @@
                                       ?>
                                       <tr class="gradeX">
 
-                                       <td><?php echo $row->nik; ?></td>
-                                       <td><?php echo $row->nama; ?></td>
-                                       <td><?php echo $row->alamat; ?></td>
-                                       <td><?php echo "No.Telp : " .$row->no_telp. "Email : " .$row->email; ?></td>
-                                       <td class="center"><a href="<?php echo base_url('pegawai/store/'.$row->id); ?>"> Edit </a> &nbsp; | &nbsp; <a href="<?php echo base_url('pegawai/delete/'.$row->id); ?>"> Delete </a></td>
+                                       <td><?php echo $row->member_id; ?></td>
+                                       <td><?php echo $row->member_name; ?></td>
+                                       <td><?php echo $row->address; ?></td>
+                                       <td><?php echo "No.Telp : " .$row->phone_number. " &nbsp; Email : " .$row->email; ?></td>
+                                       <td class="center"><a href="<?php echo base_url('member/store/'.$row->id); ?>"> Edit </a> &nbsp; | &nbsp; <a href="<?php echo base_url('member/delete/'.$row->id); ?>"> Delete </a></td>
                                      </tr>
                                      <?php
                                      }

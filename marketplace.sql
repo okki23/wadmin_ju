@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-02-18 15:35:22
+Date: 2018-02-18 17:42:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,35 +37,6 @@ CREATE TABLE `kurirs` (
 -- ----------------------------
 -- Records of kurirs
 -- ----------------------------
-
--- ----------------------------
--- Table structure for members
--- ----------------------------
-DROP TABLE IF EXISTS `members`;
-CREATE TABLE `members` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `member_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `member_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone_number` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `username` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status_no` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- ----------------------------
--- Records of members
--- ----------------------------
-INSERT INTO `members` VALUES ('1', 'MBR-02180001', 'Juhardi Hamsyah', '08216465', 'buaran', 'admin@gmail.com', 'member', 'admin', '$2y$10$whdwPQdyj14cWde3/iAzOuPs2hPqVAvFGcwKYH2MYVuZ4PKZQYY6W', '0', 'f8271808b85e5de68df3b7621e1715eee69ea669', '2018-02-09 07:02:26', '2018-02-11 18:26:11');
-INSERT INTO `members` VALUES ('2', 'MBR-02180002', 'juhardi', '02116151', 'uihasiuhdiuashd', 'juhardi@gmail.com', 'member', 'juhardi hamsyah', '$2y$10$C8WORo4bI8AytDPwDymtvOhXChxIfra57xWjA86/HKccMUhP9eiuW', '0', 'd85deed31db01db8c3268088f107cc0e0e9bc434', '2018-02-09 07:19:54', '2018-02-09 07:20:21');
-INSERT INTO `members` VALUES ('3', 'MBR-02180003', 'juhardi', '221356156', 'qweqeq', 'qweqeq', 'member', 'juhardi hamsyah', '$2y$10$Zcb7wA2zxmgKTzZosInhnucVggRjOIbYMoVGsWW/Z4ZsQjhdWcl/i', '0', 'fe57756007f54253145dbdfd72b7f0cd6d0dc3ca', '2018-02-09 08:05:04', '2018-02-09 08:10:09');
-INSERT INTO `members` VALUES ('4', 'MBR-02180004', 'admin', '31321', 'jadasd', 'ada@hbajsbd', 'member', 'admin', '$2y$10$cHTjdi9dq6/5akI8DJKTmusluzUf2q0bLGqotsVs.3hYlM9Ttw8LO', '0', 'f8271808b85e5de68df3b7621e1715eee69ea669', '2018-02-11 18:25:46', '2018-02-11 18:26:11');
 
 -- ----------------------------
 -- Table structure for migrations
@@ -117,6 +88,36 @@ INSERT INTO `m_employee` VALUES ('8', '76457346500', 'Juhardi Hamzah', 'Jl.Nangk
 INSERT INTO `m_employee` VALUES ('9', '329842384', 'Reza Aki', 'Jl.Kuya', '0218345349', 'rezaki@gmail.com');
 
 -- ----------------------------
+-- Table structure for m_member
+-- ----------------------------
+DROP TABLE IF EXISTS `m_member`;
+CREATE TABLE `m_member` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `member_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `member_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone_number` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `username` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status_no` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of m_member
+-- ----------------------------
+INSERT INTO `m_member` VALUES ('1', 'MBR-02180001', 'Juhardi Hamsyahx', '08216465', 'buaran', 'admin@gmail.com', 'member', 'admin', '$2y$10$whdwPQdyj14cWde3/iAzOuPs2hPqVAvFGcwKYH2MYVuZ4PKZQYY6W', '0', 'f8271808b85e5de68df3b7621e1715eee69ea669', '2018-02-09 07:02:26', '2018-02-11 18:26:11');
+INSERT INTO `m_member` VALUES ('2', 'MBR-02180002', 'juhardi', '02116151', 'uihasiuhdiuashd', 'juhardi@gmail.com', 'member', 'juhardi hamsyah', '$2y$10$C8WORo4bI8AytDPwDymtvOhXChxIfra57xWjA86/HKccMUhP9eiuW', '0', 'd85deed31db01db8c3268088f107cc0e0e9bc434', '2018-02-09 07:19:54', '2018-02-09 07:20:21');
+INSERT INTO `m_member` VALUES ('3', 'MBR-02180003', 'juhardi', '221356156', 'qweqeq', 'qweqeq', 'member', 'juhardi hamsyah', '$2y$10$Zcb7wA2zxmgKTzZosInhnucVggRjOIbYMoVGsWW/Z4ZsQjhdWcl/i', '0', 'fe57756007f54253145dbdfd72b7f0cd6d0dc3ca', '2018-02-09 08:05:04', '2018-02-09 08:10:09');
+INSERT INTO `m_member` VALUES ('4', 'MBR-02180004', 'admin', '31321', 'jadasd', 'ada@hbajsbd', 'member', 'admin', '$2y$10$cHTjdi9dq6/5akI8DJKTmusluzUf2q0bLGqotsVs.3hYlM9Ttw8LO', '0', 'f8271808b85e5de68df3b7621e1715eee69ea669', '2018-02-11 18:25:46', '2018-02-11 18:26:11');
+INSERT INTO `m_member` VALUES ('5', '76457346500', 'Juhardi Hamzah', '089785345345', 'Jl.Nangka 20', 'juhardihamsyah2@gmail.com', '', '', '', '', null, null, null);
+
+-- ----------------------------
 -- Table structure for m_product
 -- ----------------------------
 DROP TABLE IF EXISTS `m_product`;
@@ -133,12 +134,11 @@ CREATE TABLE `m_product` (
   `created_at` varchar(100) DEFAULT NULL,
   `updated_at` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of m_product
 -- ----------------------------
-INSERT INTO `m_product` VALUES ('20', '15', null, 'PR01', 'Sembako', 'Minyak Tanah', '1 Liter', 'ffg.png', '10', null, null);
 
 -- ----------------------------
 -- Table structure for m_service_center

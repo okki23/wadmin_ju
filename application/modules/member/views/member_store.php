@@ -99,39 +99,39 @@
                                  <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                  <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                              </div>
-                             <h4 class="panel-title">EMPLOYEE MANAGEMENT FORM</h4>
+                             <h4 class="panel-title">MEMBER MANAGEMENT FORM</h4>
                          </div>
 
                          <div class="panel-body">
 
-                             <form class="form-horizontal" action="<?php echo base_url('pegawai/save'); ?>" method="POST">
+                             <form class="form-horizontal" action="<?php echo base_url('member/save'); ?>" method="POST">
 															 <input type="hidden" name="id" value="<?php echo $parseform->id; ?>">
 															 <div class="form-group">
-															 		<label class="col-md-3 control-label">NIK
+															 		<label class="col-md-3 control-label">Member ID
 																	</label>
 															 		<div class="col-md-9">
-															 				<input type="text" name="nik" value="<?php echo $parseform->nik; ?>" class="form-control" />
+															 				<input type="text" name="member_id" value="<?php echo $parseform->member_id; ?>" class="form-control" />
 															 		</div>
 															 </div>
                                <div class="form-group">
-															 		<label class="col-md-3 control-label">Nama
+															 		<label class="col-md-3 control-label">Member Name
 																	</label>
 															 		<div class="col-md-9">
-															 				<input type="text" name="nama" value="<?php echo $parseform->nama; ?>" class="form-control"  />
+															 				<input type="text" name="member_name" value="<?php echo $parseform->member_name; ?>" class="form-control"  />
 															 		</div>
 															 </div>
                                <div class="form-group">
 															 		<label class="col-md-3 control-label">Alamat
 																	</label>
 															 		<div class="col-md-9">
-															 				<input type="text" name="alamat" value="<?php echo $parseform->alamat; ?>" class="form-control"   />
+															 				<input type="text" name="address" value="<?php echo $parseform->address; ?>" class="form-control"   />
 															 		</div>
 															 </div>
                                <div class="form-group">
 															 		<label class="col-md-3 control-label">No Telp
 																	</label>
 															 		<div class="col-md-9">
-															 				<input type="text" name="no_telp" value="<?php echo $parseform->no_telp; ?>" class="form-control"   />
+															 				<input type="text" name="phone_number" value="<?php echo $parseform->phone_number; ?>" class="form-control"   />
 															 		</div>
 															 </div>
                                <div class="form-group">

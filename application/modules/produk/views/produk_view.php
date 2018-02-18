@@ -24,10 +24,10 @@
                                    <thead>
                                      <tr>
                                        <th style="width:2%; text-align:center;">No</th>
-                                       <th style="width:10%; text-align:center;">Kode Produk</th>
-                                       <th style="width:20%; text-align:center;">Nama Produk</th>
-                                       <th style="width:20%; text-align:center;">Kategori</th>
-                                       <th style="width:20%; text-align:center;">Varian</th>
+                                       <th style="width:15%; text-align:center;">Kode Produk</th>
+                                       <th style="width:25%; text-align:center;">Nama Produk</th>
+                                       <th style="width:15%; text-align:center;">Kategori</th>
+                                       <th style="width:15%; text-align:center;">Varian</th>
                                        <th style="width:5%; text-align:center;">Stok</th>
                                        <th style="width:30%; text-align:center;">Foto Produk</th>
                                        <th style="width:5%; text-align:center;">Opsi</th>
